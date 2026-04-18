@@ -1,12 +1,18 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.UUID;
+
 public abstract class Pessoa {
     protected String nome;
     protected final String cpf;
-    protected String dataNascimento;
+    protected LocalDate dataNascimento;
+    private static final DateTimeFormatter conversao = DateTimeFormatter.ofPattern("yyyyMMdd");
 
     public Pessoa(String nome, String cpf, String dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
+        this.dataNascimento = LocalDate.parse(dataNascimento, conversao);
     }
 
     public String getNome() {
@@ -21,11 +27,11 @@ public abstract class Pessoa {
         return cpf;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 }
