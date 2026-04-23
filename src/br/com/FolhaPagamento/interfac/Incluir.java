@@ -1,3 +1,7 @@
+package br.com.FolhaPagamento.interfac;
+
+import br.com.FolhaPagamento.model.Funcionario;
+
 public interface Incluir {
 
     public void adicionarFolhaPagamento(Funcionario funcionario);

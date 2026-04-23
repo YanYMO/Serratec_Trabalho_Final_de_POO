@@ -1,3 +1,5 @@
+package br.com.FolhaPagamento.model;
+
 import java.time.LocalDate;
 import java.util.UUID;
 

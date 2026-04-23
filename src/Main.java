@@ -1,4 +1,15 @@
-import org.postgresql.util.PSQLException;
+//package br.com.FolhaPagamento.main;
+
+import br.com.FolhaPagamento.dao.DependenteDAO;
+import br.com.FolhaPagamento.dao.FolhaPagamentoDAO;
+import br.com.FolhaPagamento.dao.FuncionarioDAO;
+import br.com.FolhaPagamento.exception.DependenteException;
+import br.com.FolhaPagamento.exception.FuncionarioException;
+import br.com.FolhaPagamento.infra.ConnectionFactory;
+import br.com.FolhaPagamento.model.Contracheque;
+import br.com.FolhaPagamento.model.Dependente;
+import br.com.FolhaPagamento.model.FolhaPagamento;
+import br.com.FolhaPagamento.model.Funcionario;
 
 import java.io.*;
 import java.sql.Connection;
@@ -92,7 +103,7 @@ public class Main {
             FolhaPagamentoDAO dao3 = new FolhaPagamentoDAO(connection);
 
             //Faz a inserção das informações ao percorrer as
-            //listas de Funcionario, Dependente e FolhaPagamento.
+            //listas de br.com.FolhaPagamento.model.Funcionario, br.com.FolhaPagamento.model.Dependente e br.com.FolhaPagamento.model.FolhaPagamento.
             for (Funcionario fun : funcionarios) {
                 dao.inserir(fun);
 

@@ -1,3 +1,5 @@
+package br.com.FolhaPagamento.interfac;
+
 public interface Impostos {
 
     public void calculaImpostos();

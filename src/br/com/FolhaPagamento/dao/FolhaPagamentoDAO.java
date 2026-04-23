@@ -1,4 +1,9 @@
-import javax.xml.transform.Result;
+package br.com.FolhaPagamento.dao;
+
+import br.com.FolhaPagamento.model.Contracheque;
+import br.com.FolhaPagamento.model.FolhaPagamento;
+import br.com.FolhaPagamento.model.Funcionario;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +36,7 @@ public class FolhaPagamentoDAO {
         }
     }
 
-    //Devolve uma lista formatada atraves de uma busca no Banco de Dados, que será armazenada na lista Contracheque da Classe Contracheque.
+    //Devolve uma lista formatada atraves de uma busca no Banco de Dados, que será armazenada na lista br.com.FolhaPagamento.model.Contracheque da Classe br.com.FolhaPagamento.model.Contracheque.
     public List<Contracheque> listar() {
         String sql = "select nome, cpf, mfol.descontoINSS, mfol.descontoIR, salarioLiquido from matriz.folhaPagamento mfol inner join matriz.funcionario mfun on mfun.idFuncionario = mfol.idfuncionario";
         List<Contracheque> contracheques = new ArrayList<>();

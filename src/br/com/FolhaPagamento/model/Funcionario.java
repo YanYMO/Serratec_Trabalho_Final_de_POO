@@ -1,3 +1,9 @@
+package br.com.FolhaPagamento.model;
+
+import br.com.FolhaPagamento.exception.DependenteException;
+import br.com.FolhaPagamento.interfac.Impostos;
+import br.com.FolhaPagamento.interfac.Incluir;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -24,7 +30,7 @@ public final class Funcionario extends Pessoa implements Impostos, Incluir {
     }
 
     //A função "adicionarDependente" faz a verificação do CPF e caso seja único, preenche o
-    //construtor de Dependente e adiciona na lista de dependentes do funcionario que a chamou.
+    //construtor de br.com.FolhaPagamento.model.Dependente e adiciona na lista de dependentes do funcionario que a chamou.
     @Override
     public void adicionarDependente(String nome, String cpf, String dataNascimento, String parentesco) {
 

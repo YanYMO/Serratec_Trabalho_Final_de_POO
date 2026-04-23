@@ -1,4 +1,6 @@
-import org.postgresql.util.PGobject;
+package br.com.FolhaPagamento.dao;
+
+import br.com.FolhaPagamento.model.Funcionario;
 import org.postgresql.util.PSQLException;
 
 import java.sql.Connection;
