@@ -7,11 +7,13 @@ public final class Dependente extends Pessoa {
     private Parentesco parentesco;
     private static final Integer idadeMinima = 18;
 
-    public Dependente(String nome, String cpf, String dataNascimento, String parentesco) {
+    public Dependente(String nome, String cpf, String dataNascimento, String parentesco) throws DependenteException {
         super(nome, cpf, dataNascimento);
         this.idDependente = UUID.randomUUID();
         this.parentesco = Parentesco.valueOf(parentesco);
 
+        //Faz o calculo inicial para realizar a validação de idade do
+        //dependente pegando a data atual e subtraindo o ano de nascimento.
         LocalDate hoje = LocalDate.now();
         Period periodo = Period.between(this.dataNascimento, hoje);
         int idadeAtual  =  periodo.getYears();
@@ -21,14 +23,6 @@ public final class Dependente extends Pessoa {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Dependente{" +
-                "idDependente=" + idDependente +
-                ", parentesco=" + parentesco +
-                '}';
-    }
-
     public UUID getIdDependente() {
         return idDependente;
     }
@@ -36,10 +30,4 @@ public final class Dependente extends Pessoa {
     public Parentesco getParentesco() {
         return parentesco;
     }
-
-    public void setParentesco(Parentesco parentesco) {
-        this.parentesco = parentesco;
-    }
-
-
 }

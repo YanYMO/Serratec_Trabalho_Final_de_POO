@@ -3,8 +3,6 @@ import java.util.UUID;
 
 public final class FolhaPagamento {
     private UUID codigo;
-    private String nomeFuncionario;
-    private String cpf;
     private LocalDate data;
     private Double descontoINSS;
     private Double descontoIR;
@@ -15,12 +13,12 @@ public final class FolhaPagamento {
         this.data = LocalDate.now();
         this.descontoINSS = funcionario.getDescontoINSS();
         this.descontoIR = funcionario.getDescontoIR();
-        this.salarioLiquido = calculaSalarioLiquido(funcionario);
+        this.salarioLiquido = 0.0;
     }
 
-    public FolhaPagamento() {
-    }
-
+    //A funcão "calculaSalarioLiquido" faz o cálculo do salário liquido
+    //após receber como parâmetro o funcionario ao qual será calculado,
+    //retornando um valor tipo Double diretamente no construtor.
     public Double calculaSalarioLiquido(Funcionario funcionario) {
         return salarioLiquido = funcionario.getSalarioBruto() - funcionario.getDescontoINSS() - funcionario.getDescontoIR();
     }
@@ -29,24 +27,12 @@ public final class FolhaPagamento {
         return codigo;
     }
 
-    public LocalDate getLocalDate() {
-        return data;
-    }
-
     public Double getDescontoINSS() {
         return descontoINSS;
     }
 
-    public void setDescontoINSS(Double descontoINSS) {
-        this.descontoINSS = descontoINSS;
-    }
-
     public Double getDescontoIR() {
         return descontoIR;
-    }
-
-    public void setDescontoIR(Double descontoIR) {
-        this.descontoIR = descontoIR;
     }
 
     public LocalDate getData() {
@@ -55,9 +41,5 @@ public final class FolhaPagamento {
 
     public Double getSalarioLiquido() {
         return salarioLiquido;
-    }
-
-    public String getNomeFuncionario() {
-        return nomeFuncionario;
     }
 }

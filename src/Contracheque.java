@@ -8,7 +8,7 @@ public class Contracheque {
     public Contracheque(String nome, String cpf, String descontoINSS, String descontoIR, String salarioLiquido) {
         this.nome = nome;
         this.cpf = cpf;
-        this.descontoINSS = Double.valueOf(descontoINSS) ;
+        this.descontoINSS = Double.valueOf(descontoINSS);
         this.descontoIR = Double.valueOf(descontoIR);
         this.salarioLiquido = Double.valueOf(salarioLiquido);
     }

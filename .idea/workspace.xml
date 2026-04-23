@@ -1,41 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00398738-25b6-4737-adcb-cdfe8559eb1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b8ed19d4-f158-491a-9b98-b6ff818e4e25" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="Exception" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/81d1c850-9bef-48e5-85db-c91b924df067/console.sql" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/dados.csv" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/ConnectionFactory.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Contracheque.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Dependente.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/DependenteDAO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/DependenteException.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/FolhaPagamento.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/FolhaPagamentoDAO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Funcionario.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/FuncionarioDAO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/FuncionarioException.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Impostos.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Incluir.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Main.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Parentesco.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Pessoa.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1,
+  &quot;associatedIndex&quot;: 8,
   &quot;fromUser&quot;: false
 }</component>
-  <component name="ProjectId" id="3CUHnkOFx3QFZkRlLB4kaJwdWx8" />
+  <component name="ProjectId" id="3C8CmbAhMAvmTjufvBaLCrZh6rl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;yan&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yan Martins/Desktop/Serratec Trabalho Final de POO/Contracheque/src&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Yan Martins/Desktop/Serratec Trabalho Final de POO/Contracheque/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan Martins\Desktop\Serratec Trabalho Final de POO\Contracheque\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="FolhaPagamento" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="FolhaPagamento" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="FolhaPagamento" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="00398738-25b6-4737-adcb-cdfe8559eb1c" name="Changes" comment="" />
+      <changelist id="b8ed19d4-f158-491a-9b98-b6ff818e4e25" name="Changes" comment="" />
       <created>1774919830584</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -45,5 +115,35 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.time.format.DateTimeParseException" package="java.time.format" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
