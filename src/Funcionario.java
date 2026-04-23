@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public final class Funcionario extends Pessoa implements Impostos {
+public final class Funcionario extends Pessoa implements Impostos, Incluir {
     private UUID idFuncionario;
     private Double salarioBruto;
     private Double descontoINSS;
@@ -23,24 +23,24 @@ public final class Funcionario extends Pessoa implements Impostos {
         this.folhaPagamento = new ArrayList<>();
     }
 
+    //A função "adicionarDependente" faz a verificação do CPF e caso seja único, preenche o
+    //construtor de Dependente e adiciona na lista de dependentes do funcionario que a chamou.
+    @Override
     public void adicionarDependente(String nome, String cpf, String dataNascimento, String parentesco) {
+
+        //Verifica se existe algum dependente com o mesmo CPF na lista de dependentes
+        //e caso sim, pula esse dependente e passa para o próximo da lista, caso exista.
+        if (dependente.stream().anyMatch(dependente -> dependente.getCpf().equals(cpf))) {
+            throw new DependenteException("O dependente possui CPF idêntico a outro já cadastrado!");
+        }
         Dependente dependente = new Dependente(nome, cpf, dataNascimento, parentesco);
         this.dependente.add(dependente);
     }
 
-    @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("\nSeu contracheque ").append(getNome()).append("\n\n");
-        sb.append("Salário bruto: ").append(String.format("%.2f", getSalarioBruto())).append("\n");
-        sb.append("Desconto INSS: ").append(String.format("%.2f", getDescontoINSS())).append("\n");
-        sb.append("Desconto IR: ").append(String.format("%.2f", getDescontoIR())).append("\n");
-        sb.append("Desconto Dependente: ").append(String.format("%.2f", getDescontoD())).append("\n\n");
-        sb.append("Salário líquido: ").append(String.format("%.2f", folhaPagamento.get(0).getSalarioLiquido())).append("\n");
-
-        return sb.toString();
-    }
-
+    //A função "adicionarFolhaPagamento" chama a função "calculaImpostos", cria uma folhaPagamento,
+    //passando o nome do funcionario que a chamou, chama a função "calculaSalarioLiquido" também
+    //passando o funcionario que a chamou e por fim adiciona a folhaPagamento na lista de
+    //folhaPagamento do mesmo funcionario.
     @Override
     public void adicionarFolhaPagamento(Funcionario funcionario) {
         funcionario.calculaImpostos();
@@ -49,6 +49,8 @@ public final class Funcionario extends Pessoa implements Impostos {
         this.folhaPagamento.add(folhaPagamento);
     }
 
+    //A função "calculaImpostos" reune todas as funções
+    //de calculo de impostos e as executa na ordem correta.
     @Override
     public void calculaImpostos() {
         calculaINSS();
@@ -56,6 +58,7 @@ public final class Funcionario extends Pessoa implements Impostos {
         calculaIR();
     }
 
+    //A função "calculaINSS" faz o calculo do desconto de INSS do funcionario.
     @Override
     public void calculaINSS() {
         if (salarioBruto <= 1518.0){
@@ -71,6 +74,7 @@ public final class Funcionario extends Pessoa implements Impostos {
         }
     }
 
+    //A função "calculaD" faz o calculo do desconto de Dependentes do funcionario, caso tenha.
     @Override
     public void calculaD() {
         for (Dependente dependentes : dependente) {
@@ -79,6 +83,7 @@ public final class Funcionario extends Pessoa implements Impostos {
         this.descontoD = quantidadeDependentes * 189.59;
     }
 
+    //A função "calculaIR" faz o calculo do desconto de Imposto de Renda do funcionario.
     @Override
     public void calculaIR() {
         double baseDeCalculoIR = salarioBruto - descontoD - descontoINSS;
@@ -104,32 +109,16 @@ public final class Funcionario extends Pessoa implements Impostos {
         return salarioBruto;
     }
 
-    public void setSalarioBruto(Double salarioBruto) {
-        this.salarioBruto = salarioBruto;
-    }
-
     public Double getDescontoINSS() {
         return descontoINSS;
-    }
-
-    public void setDescontoINSS(Double descontoINSS) {
-        this.descontoINSS = descontoINSS;
     }
 
     public Double getDescontoIR() {
         return descontoIR;
     }
 
-    public void setDescontoIR(Double descontoIR) {
-        this.descontoIR = descontoIR;
-    }
-
     public Double getDescontoD() {
         return descontoD;
-    }
-
-    public void setDescontoD(Double descontoD) {
-        this.descontoD = descontoD;
     }
 
     public List<Dependente> getDependente() {

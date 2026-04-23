@@ -18,7 +18,7 @@ public class FolhaPagamentoDAO {
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setObject(1, folhaPagamento.getCodigo());
-            stmt.setDate(2, Date.valueOf(folhaPagamento.getLocalDate()));
+            stmt.setDate(2, Date.valueOf(folhaPagamento.getData()));
             stmt.setDouble(3, folhaPagamento.getDescontoINSS());
             stmt.setDouble(4, folhaPagamento.getDescontoIR());
             stmt.setDouble(5, folhaPagamento.getSalarioLiquido());
