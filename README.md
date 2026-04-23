@@ -4,6 +4,19 @@
 
 ---
 
+## 👥 Grupo 1
+
+|   Nome   | Apresentação |
+|----------|-----------------|
+|   *Adriane*   | *Apresentação README* |
+|   *Valois*   | *Banco de Dados* |
+|   *Ana Luisa*   | *Classes principais* |
+|   *Raquel*   | *Classes Interfaces* |
+|   *Marcelo*   | *Classes Exception e Arquivo de dados* |
+|   *Yan*   | *Classes DAOs e Classe Main* |
+
+
+---
 
 ## 📌 Sobre o Projeto
 
@@ -13,36 +26,45 @@ Este sistema realiza o **cálculo de salário líquido** de funcionários de uma
 
 ## 📐 Diagrama UML
 
+> *<img width="3508" height="2480" alt="Image" src="https://github.com/user-attachments/assets/ac646676-f3a2-4a5b-ab4c-68ab6be417a9" />*
 > 
-
-> 
+> *<img width="3508" height="2480" alt="Image" src="https://github.com/user-attachments/assets/9e520be9-fd13-41f1-9743-9f8c5f56d169" />*
 
 
 ---
 
-## 🗂️ Estrutura de Classes
+## 🗂️ Estrutura de Pacotes
 
 ```
-├── Pessoa.java                 # Classe abstrata base
-│   ├── Funcionario.java        # Herda de Pessoa, implementa Impostos e Incluir
-│   └── Dependente.java         # Herda de Pessoa
+br.com.FolhaPagamento
 │
-├── Impostos.java               # Interface: cálculo de INSS, IR e dependentes
-├── Incluir.java                # Interface: adição de dependente e folha de pagamento
-├── Parentesco.java             # Enum: FILHO, SOBRINHO, OUTROS
+├── dao
+│   ├── DependenteDAO.java          # Persistência de dependentes no banco
+│   ├── FolhaPagamentoDAO.java      # Persistência e listagem da folha de pagamento
+│   └── FuncionarioDAO.java         # Persistência de funcionários no banco
 │
-├── DependenteException.java    # Exceção customizada para dependentes
-├── FuncionarioException.java   # Exceção customizada para funcionários
+├── exception
+│   ├── DependenteException.java    # Exceção customizada para dependentes
+│   └── FuncionarioException.java   # Exceção customizada para funcionários
 │
-├── FolhaPagamento.java         # Representa o contracheque gerado em memória
-├── Contracheque.java           # Representa os dados lidos do banco para exportação
+├── infra
+│   └── ConnectionFactory.java      # Fábrica de conexão com o banco PostgreSQL
 │
-├── ConnectionFactory.java      # Fábrica de conexão com o banco PostgreSQL
-├── FuncionarioDAO.java         # Persistência de funcionários no banco
-├── DependenteDAO.java          # Persistência de dependentes no banco
-├── FolhaPagamentoDAO.java      # Persistência e listagem da folha de pagamento
+├── interface
+│   ├── Impostos.java               # Interface: cálculo de INSS, IR e dependentes
+│   └── Incluir.java                # Interface: adição de dependente e folha de pagamento
 │
-└── Main.java                   # Ponto de entrada — menu, leitura CSV e orquestração
+├── model
+│   ├── enums
+│   │   └── Parentesco.java         # Enum: FILHO, SOBRINHO, OUTROS
+│   │
+│   ├── Contracheque.java           # Representa os dados lidos do banco para exportação
+│   ├── Dependente.java             # Herda de Pessoa
+│   ├── FolhaPagamento.java         # Representa o contracheque gerado em memória
+│   ├── Funcionario.java            # Herda de Pessoa, implementa Impostos e Incluir
+│   └── Pessoa.java                 # Classe abstrata base
+│
+└── Main.java                       # Ponto de entrada — menu, leitura CSV e orquestração
 ```
 
 ---
@@ -79,6 +101,7 @@ Este sistema realiza o **cálculo de salário líquido** de funcionários de uma
 | **Classes finais** | `Funcionario`, `Dependente`, `FolhaPagamento` e `Contracheque` |
 | **Arquivos** | Leitura via `BufferedReader` e escrita via `BufferedWriter` |
 | **Banco de Dados** | Persistência via JDBC com `PreparedStatement` e `ResultSet` |
+| **Separação por pacotes** | Classes organizadas em `model`, `dao`, `exception`, `infra` e `interface` |
 
 ---
 
@@ -161,7 +184,7 @@ O sistema utiliza **PostgreSQL** com schema `matriz` e três tabelas:
 - **`matriz.dependente`** — dados do dependente vinculado ao seu funcionário
 - **`matriz.folhaPagamento`** — registro do contracheque gerado por funcionário
 
-A conexão é criada uma única vez na `Main` pela classe `ConnectionFactory` e repassada para todos os DAOs, sendo encerrada ao final da execução.
+A conexão é criada uma única vez na `Main` pela classe `ConnectionFactory` (pacote `infra`) e repassada para todos os DAOs, sendo encerrada ao final da execução.
 
 Configurações padrão:
 
@@ -171,18 +194,18 @@ Schema:   matriz
 Usuário:  postgres
 ```
 
-> ⚠️ Atualize as credenciais em `ConnectionFactory.java` conforme seu ambiente local.
+> ⚠️ Atualize as credenciais em `br.com.FolhaPagamento.infra.ConnectionFactory` conforme seu ambiente local.
 
 ---
 
 ## ⚠️ Validações e Exceções
 
-| Exceção | Quando é lançada |
-|---|---|
-| `DependenteException` | Dependente com **18 anos ou mais** |
-| `DependenteException` | Dependente com **CPF já cadastrado** para o mesmo funcionário |
-| `FuncionarioException` | Funcionário com **CPF já existente** na lista do arquivo |
-| `RuntimeException` | Falha na inserção no banco (ex: CPF duplicado na tabela) |
+| Exceção | Pacote | Quando é lançada |
+|---|---|---|
+| `DependenteException` | `exception` | Dependente com **18 anos ou mais** |
+| `DependenteException` | `exception` | Dependente com **CPF já cadastrado** para o mesmo funcionário |
+| `FuncionarioException` | `exception` | Funcionário com **CPF já existente** na lista do arquivo |
+| `RuntimeException` | — | Falha na inserção no banco (ex: CPF duplicado na tabela) |
 
 > Erros de dependente e funcionário são tratados individualmente — um registro inválido **não interrompe** o processamento dos demais.
 
@@ -193,7 +216,7 @@ Usuário:  postgres
 **Pré-requisitos:**
 - Java 11 ou superior
 - PostgreSQL instalado e rodando localmente
-- Driver JDBC do PostgreSQL (`postgresql.jar`) no classpath
+- Driver JDBC do PostgreSQL no classpath
 
 **Passos:**
 
@@ -204,19 +227,15 @@ Usuário:  postgres
 
 2. Configure o banco de dados criando o schema `matriz` com as tabelas `funcionario`, `dependente` e `folhaPagamento`.
 
-3. Atualize as credenciais em `ConnectionFactory.java`.
+3. Atualize as credenciais em `br.com.FolhaPagamento.infra.ConnectionFactory`.
 
-4. Compile o projeto:
+4. Compile e execute pela IDE de sua preferência (IntelliJ, Eclipse, etc.) ou via terminal:
    ```bash
-   javac -cp .:postgresql.jar *.java
+   javac -cp .:postgresql.jar -d out $(find . -name "*.java")
+   java -cp out:postgresql.jar br.com.FolhaPagamento.Main
    ```
 
-5. Execute:
-   ```bash
-   java -cp .:postgresql.jar Main
-   ```
-
-6. Siga as instruções do menu:
+5. Siga as instruções do menu:
    - Informe o **caminho do arquivo de entrada** (ex: `dados/funcionarios.csv`)
    - Informe o **nome do arquivo de saída** (ex: `folha_pagamento` → gera `folha_pagamento.csv`)
 
