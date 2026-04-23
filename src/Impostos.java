@@ -1,11 +1,10 @@
 public interface Impostos {
-        public void calculaImpostos();
 
-        public void calculaINSS();
+    public void calculaImpostos();
 
-        public void calculaIR();
+    public void calculaINSS();
 
-        public void calculaD();
+    public void calculaIR();
 
-        public void adicionarFolhaPagamento(Funcionario funcionario);
+    public void calculaD();
 }
