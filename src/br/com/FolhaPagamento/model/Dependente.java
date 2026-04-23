@@ -1,3 +1,8 @@
+package br.com.FolhaPagamento.model;
+
+import br.com.FolhaPagamento.exception.DependenteException;
+import br.com.FolhaPagamento.model.enums.Parentesco;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.UUID;

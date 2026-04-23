@@ -1,7 +1,7 @@
+package br.com.FolhaPagamento.model;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.UUID;
 
 public abstract class Pessoa {
     protected String nome;

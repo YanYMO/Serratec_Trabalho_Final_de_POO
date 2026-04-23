@@ -20,21 +20,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/81d1c850-9bef-48e5-85db-c91b924df067/console.sql" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/dados.csv" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/ConnectionFactory.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/Contracheque.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/Dependente.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/DependenteDAO.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/DependenteException.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/FolhaPagamento.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/FolhaPagamentoDAO.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/Funcionario.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/FuncionarioDAO.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/FuncionarioException.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/Impostos.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/Incluir.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Main.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/Parentesco.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/Pessoa.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/br/com/FolhaPagamento/dao/DependenteDAO.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -85,17 +72,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="FolhaPagamento" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="FolhaPagamento" />
-      <option name="filePath" />
-      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>

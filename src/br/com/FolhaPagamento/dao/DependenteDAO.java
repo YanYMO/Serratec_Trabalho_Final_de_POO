@@ -1,3 +1,8 @@
+package br.com.FolhaPagamento.dao;
+
+import br.com.FolhaPagamento.model.Dependente;
+import br.com.FolhaPagamento.model.Funcionario;
+import br.com.FolhaPagamento.model.enums.Parentesco;
 import org.postgresql.util.PGobject;
 import org.postgresql.util.PSQLException;
 

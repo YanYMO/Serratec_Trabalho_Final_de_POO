@@ -1,3 +1,5 @@
+package br.com.FolhaPagamento.model;
+
 public class Contracheque {
     private String nome;
     private String cpf;
