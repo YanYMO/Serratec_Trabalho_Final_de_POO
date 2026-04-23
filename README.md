@@ -13,9 +13,9 @@ Este sistema realiza o **cálculo de salário líquido** de funcionários de uma
 
 ## 📐 Diagrama UML
 
-> *<img width="3508" height="2480" alt="Image" src="https://github.com/user-attachments/assets/f5195d18-5bad-42d5-9b36-b50b42a4607a" />*
+> 
 
-> *<img width="3508" height="2480" alt="Image" src="https://github.com/user-attachments/assets/1fe6517a-f395-4c93-bae4-1705e893a5ec" />*
+> 
 
 
 ---
