@@ -1,8 +1,8 @@
 package br.com.FolhaPagamento.model;
 
 import br.com.FolhaPagamento.exception.DependenteException;
-import br.com.FolhaPagamento.interfac.Impostos;
-import br.com.FolhaPagamento.interfac.Incluir;
+import br.com.FolhaPagamento.contract.Impostos;
+import br.com.FolhaPagamento.contract.Incluir;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,10 +83,7 @@ public final class Funcionario extends Pessoa implements Impostos, Incluir {
     //A função "calculaD" faz o calculo do desconto de Dependentes do funcionario, caso tenha.
     @Override
     public void calculaD() {
-        for (Dependente dependentes : dependente) {
-            quantidadeDependentes++;
-        }
-        this.descontoD = quantidadeDependentes * 189.59;
+        this.descontoD = dependente.size() * 189.59;
     }
 
     //A função "calculaIR" faz o calculo do desconto de Imposto de Renda do funcionario.

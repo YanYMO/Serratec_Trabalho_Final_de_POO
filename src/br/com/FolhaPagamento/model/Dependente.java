@@ -23,7 +23,7 @@ public final class Dependente extends Pessoa {
         Period periodo = Period.between(this.dataNascimento, hoje);
         int idadeAtual  =  periodo.getYears();
 
-        if (idadeAtual > idadeMinima) {
+        if (idadeAtual >= idadeMinima) {
             throw new DependenteException("O dependente tem a idade superior ao permitido!");
         }
     }

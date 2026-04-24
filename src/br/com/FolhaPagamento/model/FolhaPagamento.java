@@ -22,7 +22,7 @@ public final class FolhaPagamento {
     //após receber como parâmetro o funcionario ao qual será calculado,
     //retornando um valor tipo Double diretamente no construtor.
     public Double calculaSalarioLiquido(Funcionario funcionario) {
-        return salarioLiquido = funcionario.getSalarioBruto() - funcionario.getDescontoINSS() - funcionario.getDescontoIR();
+        return this.salarioLiquido = funcionario.getSalarioBruto() - funcionario.getDescontoINSS() - funcionario.getDescontoIR();
     }
 
     public UUID getCodigo() {

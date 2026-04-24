@@ -1,4 +1,4 @@
-package br.com.FolhaPagamento.interfac;
+package br.com.FolhaPagamento.contract;
 
 import br.com.FolhaPagamento.model.Funcionario;
 
