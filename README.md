@@ -28,7 +28,7 @@ Este sistema realiza o **cálculo de salário líquido** de funcionários de uma
 
 > *<img width="3508" height="2480" alt="Image" src="https://github.com/user-attachments/assets/ac646676-f3a2-4a5b-ab4c-68ab6be417a9" />*
 > 
-> *<img width="3508" height="2480" alt="Image" src="https://github.com/user-attachments/assets/9e520be9-fd13-41f1-9743-9f8c5f56d169" />*
+> *<img width="3508" height="2480" alt="Image" src="https://github.com/user-attachments/assets/e58b8a09-8d2f-424a-820b-6733d4c5a4eb" />*
 
 
 ---
@@ -50,7 +50,7 @@ br.com.FolhaPagamento
 ├── infra
 │   └── ConnectionFactory.java      # Fábrica de conexão com o banco PostgreSQL
 │
-├── interface
+├── contract
 │   ├── Impostos.java               # Interface: cálculo de INSS, IR e dependentes
 │   └── Incluir.java                # Interface: adição de dependente e folha de pagamento
 │
