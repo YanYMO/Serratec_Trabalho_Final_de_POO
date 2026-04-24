@@ -66,14 +66,14 @@ public class Main {
                                 funcionario.adicionarDependente(dadosD[0], dadosD[1], dadosD[2], dadosD[3]);
 
                             } catch (DependenteException ex) {
-                                System.out.println("Erro ao cadastrar dependente: " + ex.getMensagem());
+                                System.out.println("Erro ao cadastrar dependente: " + ex.getMessage());
                             }
                         }
                         funcionario.adicionarFolhaPagamento(funcionario);
                         funcionarios.add(funcionario);
 
                     } catch (FuncionarioException ex) {
-                        System.out.println("Erro no cadastro de funcionario: " + ex.getMensagem());
+                        System.out.println("Erro no cadastro de funcionario: " + ex.getMessage());
                         while ((linha = br.readLine()) != null) {
                             if (linha.isBlank()) {
                                 break;
