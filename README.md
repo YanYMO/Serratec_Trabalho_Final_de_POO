@@ -189,7 +189,7 @@ A conexão é criada uma única vez na `Main` pela classe `ConnectionFactory` (p
 Configurações padrão:
 
 ```
-URL:      jdbc:postgresql://localhost:5432/contracheque
+URL:      jdbc:postgresql://localhost:5432/folhaPagamento
 Schema:   matriz
 Usuário:  postgres
 ```
