@@ -189,7 +189,7 @@ A conexão é criada uma única vez na `Main` pela classe `ConnectionFactory` (p
 Configurações padrão:
 
 ```
-URL:      jdbc:postgresql://localhost:5432/folhaPagamento
+URL:      jdbc:postgresql://localhost:5432/folhapagamento
 Schema:   matriz
 Usuário:  postgres
 ```
@@ -225,7 +225,7 @@ Usuário:  postgres
    git clone https://github.com/seu-usuario/seu-repositorio.git
    ```
 
-2. Configure o banco de dados criando o schema `matriz` com as tabelas `funcionario`, `dependente` e `folhaPagamento`.
+2. Configure o banco de dados criando o schema `matriz` com as tabelas `funcionario`, `dependente` e `folhapagamento`.
 
 3. Atualize as credenciais em `br.com.FolhaPagamento.infra.ConnectionFactory`.
 
