@@ -16,7 +16,6 @@ public final class Funcionario extends Pessoa implements Impostos, Incluir {
     private Double descontoD;
     private List<Dependente> dependente;
     private List<FolhaPagamento> folhaPagamento;
-    private Integer quantidadeDependentes = 0;
 
     public Funcionario(String nome, String cpf, String dataNascimento, String salarioBruto) {
         super(nome, cpf, dataNascimento);
@@ -130,9 +129,5 @@ public final class Funcionario extends Pessoa implements Impostos, Incluir {
 
     public List<FolhaPagamento> getFolhaPagamento() {
         return folhaPagamento;
-    }
-
-    public Integer getQuantidadeDependentes() {
-        return quantidadeDependentes;
     }
 }
