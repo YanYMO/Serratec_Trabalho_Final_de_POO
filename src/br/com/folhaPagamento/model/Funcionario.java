@@ -68,11 +68,11 @@ public final class Funcionario extends Pessoa implements Impostos, Incluir {
     public void calculaINSS() {
         if (salarioBruto <= 1518.0){
             descontoINSS = (salarioBruto * 0.075);
-        } else if (salarioBruto > 1518.0 && salarioBruto < 2793.88){
+        } else if (salarioBruto > 1518.0 && salarioBruto <= 2793.88){
             descontoINSS = (salarioBruto * 0.09) - 22.77;
-        } else if (salarioBruto > 2793.88 && salarioBruto < 4190.83){
+        } else if (salarioBruto > 2793.88 && salarioBruto <= 4190.83){
             descontoINSS = (salarioBruto * 0.12) - 109.60;
-        } else if (salarioBruto > 4190.83 && salarioBruto < 8157.41){
+        } else if (salarioBruto > 4190.83 && salarioBruto <= 8157.41){
             descontoINSS = (salarioBruto * 0.14) - 190.42;
         } else {
             descontoINSS = 951.62;

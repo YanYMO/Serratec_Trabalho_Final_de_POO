@@ -24,9 +24,9 @@ public class Main {
         //Cria uma conexão com o Banco de Dados que será reutilizada durante a execução.
         Connection connection = new ConnectionFactory().getConnection();
         //Cria os objetos de cada Classe DAO.
-        FuncionarioDAO dao = new FuncionarioDAO(connection);
-        DependenteDAO dao2 = new DependenteDAO(connection);
-        FolhaPagamentoDAO dao3 = new FolhaPagamentoDAO(connection);
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO(connection);
+        DependenteDAO dependenteDAO = new DependenteDAO(connection);
+        FolhaPagamentoDAO folhaPagamentoDAO = new FolhaPagamentoDAO(connection);
 
         //Cria uma instancia de arquivo que será usada para leitura e escrita.
         Arquivo arquivo = new Arquivo();
@@ -55,13 +55,13 @@ public class Main {
             //Faz a inserção das informações ao percorrer as
             //listas de br.com.FolhaPagamento.model.Funcionario, br.com.FolhaPagamento.model.Dependente e br.com.FolhaPagamento.model.FolhaPagamento.
             for (Funcionario fun : funcionarios) {
-                dao.inserir(fun);
+                funcionarioDAO.inserir(fun);
 
                 for (Dependente den : fun.getDependente()) {
-                    dao2.inserir(fun, den);
+                    dependenteDAO.inserir(fun, den);
                 }
                 for (FolhaPagamento fol : fun.getFolhaPagamento()) {
-                    dao3.inserir(fun, fol);
+                    folhaPagamentoDAO.inserir(fun, fol);
                 }
             }
         } catch (RuntimeException e) {
@@ -78,7 +78,7 @@ public class Main {
         String arquivoSaida = scan.nextLine();
         System.out.println();
 
-        List<Contracheque> contracheque = dao3.listar();
+        List<Contracheque> contracheque = folhaPagamentoDAO.listar();
         arquivo.escreverArquivo(arquivoSaida, contracheque);
 
         try {
