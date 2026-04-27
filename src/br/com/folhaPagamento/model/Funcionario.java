@@ -91,7 +91,7 @@ public final class Funcionario extends Pessoa implements Impostos, Incluir {
         double baseDeCalculoIR = salarioBruto - descontoD - descontoINSS;
 
         if ((baseDeCalculoIR) <= 2259.0){
-           descontoIR = (baseDeCalculoIR);
+           descontoIR = 0.0;
         } else if ((baseDeCalculoIR) > 2259.0 && (baseDeCalculoIR) < 2826.65) {
             descontoIR = ((baseDeCalculoIR) * 0.075) - 169.44;
         } else if ((baseDeCalculoIR) > 2826.65 && (baseDeCalculoIR) < 3751.05) {
