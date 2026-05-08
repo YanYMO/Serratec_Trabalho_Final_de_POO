@@ -90,7 +90,7 @@ public class Arquivo {
             bw.close();
 
         } catch (IOException e) {
-            System.out.println("Erro na escrita de arquivo: " + e.getMessage());
+            throw new IllegalArgumentException("Erro na escrita de arquivo: " + e.getMessage());
         }
         System.out.println("Arquivo exportado com sucesso!");
     }

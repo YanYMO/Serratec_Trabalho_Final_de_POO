@@ -92,11 +92,11 @@ public final class Funcionario extends Pessoa implements Impostos, Incluir {
 
         if ((baseDeCalculoIR) <= 2259.0){
            descontoIR = 0.0;
-        } else if ((baseDeCalculoIR) > 2259.0 && (baseDeCalculoIR) < 2826.65) {
+        } else if ((baseDeCalculoIR) > 2259.0 && (baseDeCalculoIR) <= 2826.65) {
             descontoIR = ((baseDeCalculoIR) * 0.075) - 169.44;
-        } else if ((baseDeCalculoIR) > 2826.65 && (baseDeCalculoIR) < 3751.05) {
+        } else if ((baseDeCalculoIR) > 2826.65 && (baseDeCalculoIR) <= 3751.05) {
             descontoIR = ((baseDeCalculoIR) * 0.15) - 381.44;
-        } else if ((baseDeCalculoIR) > 3751.05 && (baseDeCalculoIR) < 4664.68) {
+        } else if ((baseDeCalculoIR) > 3751.05 && (baseDeCalculoIR) <= 4664.68) {
             descontoIR = ((baseDeCalculoIR) * 0.225) - 662.77;
         } else if ((baseDeCalculoIR) > 4664.68) {
             descontoIR = ((baseDeCalculoIR) * 0.275) - 896.0;

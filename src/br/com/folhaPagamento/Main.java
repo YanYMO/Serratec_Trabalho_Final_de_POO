@@ -78,8 +78,16 @@ public class Main {
         String arquivoSaida = scan.nextLine();
         System.out.println();
 
-        List<Contracheque> contracheque = folhaPagamentoDAO.listar();
-        arquivo.escreverArquivo(arquivoSaida, contracheque);
+        Boolean concluido = false;
+        while (!concluido) {
+            try {
+                List<Contracheque> contracheque = folhaPagamentoDAO.listar();
+                arquivo.escreverArquivo(arquivoSaida, contracheque);
+                concluido = true;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage() + ", tente novamente.");
+            }
+        }
 
         try {
             connection.close();
